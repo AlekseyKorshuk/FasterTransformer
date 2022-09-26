@@ -112,7 +112,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     ckpt_file = args.ckpt_dir + "/pytorch_model.bin"
-    checkpoint = torch.load(ckpt_file)
+    checkpoint = torch.load(ckpt_file).half().eval()
     print(f"loading from {ckpt_file}")
     
     out_path = args.output_dir
